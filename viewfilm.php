@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
         table {
             border-collapse: collapse;
             width: 80%;
-            background-color: #F2F2F2; /* Warna latar belakang tabel */
+            background-color: #F2F2F2; /* Warna latar belakang tabel film */
         }
 
         th, td {
