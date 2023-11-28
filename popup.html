@@ -1,0 +1,45 @@
+<div class="Login" style="width: 100%; height: 100%; position: relative; background: black">
+    <div class="Group12" style="width: 614px; height: 372px; left: 413px; top: 326px; position: absolute">
+        <!-- Pop-up Background -->
+        <div class="Rectangle11"
+            style="width: 614px; height: 372px; left: 0px; top: 0px; position: absolute; background: black; box-shadow: 25px 25px 25px; border-radius: 20px; border: 5px #000000 solid; filter: blur(25px)">
+        </div>
+        <!-- Pop-up Inner Border -->
+        <div class="Rectangle12"
+            style="width: 614px; height: 372px; left: 0px; top: 0px; position: absolute; background: black; border-radius: 20px; border: 7px rgba(255, 255, 255, 0.60) solid">
+        </div>
+        <!-- Additional Overlays for Aesthetic -->
+        <div class="Rectangle13"
+            style="width: 614px; height: 372px; left: 0px; top: 0px; position: absolute; background: black; box-shadow: 25px 25px 25px; border-radius: 20px; border: 5px #000000 solid; filter: blur(25px)">
+        </div>
+        <div class="Rectangle14"
+            style="width: 614px; height: 372px; left: 0px; top: 0px; position: absolute; background: black; box-shadow: 25px 25px 25px; border-radius: 20px; border: 5px #000000 solid; filter: blur(25px)">
+        </div>
+        <!-- Image -->
+        <img class="Download191" style="width: 497px; height: 329px; left: 59px; top: 22px; position: absolute"
+            src="https://s3-alpha-sig.figma.com/img/ae3f/487d/f883e129a3ebc0977d6ba5f6af05fd05?Expires=1701043200&Signature=CUiNWIFylxvIs4VemRhXE7-WYmPX1hCmYBsvjF7R4WLIFCoZkqdGYqmS3bh1hEJki3oz5egxbSx1yru-aVDKKAH0vS~t98FTYHz6-1cmf4-KPnV6PlGySnAL~ao1SRfH~19~OQ6SHZnEXoSNYPTp0HpwH-n6W8e02-XXfYJMvmTDXxTuCexV4E32uKIIykH2SgOM2Y2CsDt91psg2hLRdGyuXTDH1-4kFks2rSve3Xk2RJRs9lhGPXuhv1Q2gIFQ01kot~is0vIfkpGtm7EDddGuJOgbcR5InhNbvHRdUuJiGYxKuEc1o2~12rgcTkiMmXR-McZm8Klxv2cQ-gcsPQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+        <!-- Register Berhasil Text -->
+        <div class="RegisterBerhasil"
+            style="width: 314px; height: 45px; left: 150px; top: 97px; position: absolute; color: white; font-size: 40px; font-family: Inder; font-weight: 400; word-wrap: break-word">
+            Register Berhasil</div>
+        <!-- OK Text -->
+        <div class="Ok"
+            style="width: 47px; height: 33px; left: 284px; top: 233px; position: absolute; color: white; font-size: 30px; font-family: Inder; font-weight: 400; word-wrap: break-word">
+            OK</div>
+    </div>
+    <!-- OK Button Container -->
+    <div class="Group33" style="width: 439px; height: 61px; left: 501px; top: 549px; position: absolute">
+        <!-- OK Button Background -->
+        <div class="Rectangle15"
+            style="width: 439px; height: 61px; left: 0px; top: 0px; position: absolute; background: rgba(0, 0, 0, 0); box-shadow: 15px 15px 15px; border-radius: 10px; border: 5px #000000 solid; filter: blur(15px)">
+        </div>
+        <!-- OK Button Inner Border -->
+        <div class="Rectangle16"
+            style="width: 439px; height: 61px; left: 0px; top: 0px; position: absolute; background: rgba(0, 0, 0, 0); border-radius: 10px; border: 5px rgba(255, 255, 255, 0.60) solid">
+        </div>
+        <!-- Additional Overlays for Aesthetic -->
+        <div class="Rectangle17"
+            style="width: 439px; height: 61px; left: 0px; top: 0px; position: absolute; background: rgba(0, 0, 0, 0); box-shadow: 15px 15px 15px; border-radius: 10px; border: 5px #000000 solid; filter: blur(15px)">
+        </div>
+    </div>
+</div>
