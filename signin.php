@@ -273,7 +273,7 @@
             word-wrap: break-word;
           "
         >
-          <a href="signup.html" style="text-decoration: none; color: white"
+          <a href="signup.php" style="text-decoration: none; color: white"
             >Sign Up</a
           >
         </div>
