@@ -12,9 +12,8 @@
 <body>
     <?php include '../../components/admin/sidenav.php' ?>
     <main>
-    <h1>Data Film Iron Man</h1>
-    <form name='formulir' method='POST' 
-action='<?php $_SERVER['PHP_SELF']; ?>'>
+    <h1>Tambah Data Film Iron Man</h1>
+    <form name='formulir'>
     <table>
         <tr>
             <td>Nama Film</td>
@@ -24,9 +23,73 @@ action='<?php $_SERVER['PHP_SELF']; ?>'>
             </td>
         </tr>
         <tr>
-            <td>Foto Film</td>
+            <td>Deskripsi</td>
             <td>:</td>
             <td>
+            <input type="text" name="deskripsi">
+            </td>
+        </tr>
+        <tr>
+            <td>Tanggal Rilis</td>
+            <td>:</td>
+            <td>
+            <input type="date" name="tanggal_rilis" value="2000-01-01">
+            </td>
+        </tr>
+        <tr>
+            <td>Sutradara</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="sutradara">
+            </td>
+        </tr>
+        <tr>
+            <td>Box Office</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="box">
+            </td>
+        </tr>
+        <tr>
+            <td>Serial Film</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="serial">
+            </td>
+        </tr>
+        <tr>
+            <td>Genre</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="genre">
+            </td>
+        </tr>
+        <tr>
+            <td>Produser</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="produser">
+            </td>
+        </tr>
+        <tr>
+            <td>Cerita Oleh</td>
+            <td>:</td>
+            <td>
+            <input type="text" name="ceritaoleh">
+            </td>
+        </tr>
+        <tr>
+            <td>Pemeran</td>
+            <td>:</td>
+            <td>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
             <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
             </td>
         </tr>
@@ -34,11 +97,12 @@ action='<?php $_SERVER['PHP_SELF']; ?>'>
             <td></td>
             <td></td>
             <td>
-            <input type='submit' name='insert' value='Insert Data'>
+            <input type='submit' name='submit' class="insert" value='Submit'>
             </td>
         </tr>
     </table>
     </form>
     </main>
+    <?php include '../../components/admin/footer.php' ?>
 </body>
 </html>
