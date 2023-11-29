@@ -77,18 +77,18 @@ if(isset($_GET['id'])){
         echo "
         <tr >
             <td>$no</td>
-            <td>$row[judul]</td>
-            <td><img src='$row[poster]' width='115' height='150'></td>
+            <td>$row[nama_film]</td>
             <td>$row[deskripsi]</td>
-            <td>$row[tgl_rilis]</td>
+            <td>$row[tanggal_rilis]</td>
             <td>$row[sutradara]</td>
             <td>$row[box_office]</td>
-            <td>$row[serial_deskripsi_film]</td>
-            <td>$row[gendre]</td>
+            <td>$row[serial_film]</td>
+            <td>$row[genre]</td>
             <td>$row[produser]</td>
-            <td>$row[penulis]</td>
-            <td> <a href='updatedeskripsi_film.php?upd=$row[id]'> Edit </a> &nbsp;
-            <a href='viewdeskripsi_film.php?id=$row[id]'> Hapus </a>
+            <td>$row[cerita_oleh]</td>
+            <td><img src='$row[pemeran]' width='115' height='150'></td>
+            <td> <a href='updatedeskripsifilm.php?upd=$row[id]'> Edit </a> &nbsp;
+            <a href='viewdeskripsifilm.php?id=$row[id]'> Hapus </a>
              </td>
         </tr>
         ";
