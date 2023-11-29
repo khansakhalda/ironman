@@ -32,12 +32,24 @@ if(isset($_GET['id'])){
             font-family: 'Inder', sans-serif;
             background: #000;
         }
-
+/* 
         .DaftarFilm {
             width: 100%;
             height: 100%;
             position: relative;
             background: #000;
+        } */
+        .DaftarFilm {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .FilmContainer {
+            position: relative;
         }
 
         .Login, .Deskripsi, .Pemeran, .Film {
@@ -48,12 +60,22 @@ if(isset($_GET['id'])){
             word-wrap: break-word;
         }
 
-        .FilmTitle {
+        /* .FilmTitle {
             font-size: 15px;
             font-family: Inder;
             font-weight: 400;
             word-wrap: break-word;
             color: rgba(255, 255, 255, 0.60);
+        } */
+        .FilmTitle {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            color: white;
+            text-align: center;
         }
 
         .MoviePoster {
@@ -63,6 +85,11 @@ if(isset($_GET['id'])){
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
         }
+        /* .MoviePoster {
+            width: 240px;
+            height: 342px;
+            border-radius: 10px;
+        } */
 
         /* Add more movie-specific styles as needed */
 
@@ -116,10 +143,10 @@ if(isset($_GET['id'])){
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "
-            <div class='IronMan2008' style='width: 158px; height: 32px; left: 58px; top: 535px; position: absolute; color: rgba(255, 255, 255, 0.60); font-size: 15px; font-family: Inder; font-weight: 400; word-wrap: break-word;'>
-                " . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "
-            </div>
-            <img class='Component1' style='width: 240px; height: 342px; left: 58px; top: 155px; position: absolute; border-radius: 10px;' src='" . (isset($row['foto_film']) ? $row['foto_film'] : 'https://via.placeholder.com/240x342') . "' />";
+            <div class='FilmContainer'>
+                <img class='MoviePoster' src='" . (isset($row['foto_film']) ? $row['foto_film'] : 'https://via.placeholder.com/240x342') . "' />
+                <div class='FilmTitle'>" . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "</div>
+            </div>";
         }
         ?>
 
