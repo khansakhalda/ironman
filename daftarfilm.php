@@ -1,3 +1,23 @@
+<?php
+include "koneksi.php";
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $poster = $_GET['poster'];
+    if($id !=""){
+        $row = mysqli_fetch_array(mysqli_query($conn,"select * from film where id= '$id' "));
+        $hapus = "delete from film where id= '$id' ";
+        $query = mysqli_query($conn, $hapus);
+        if($query){
+            ?>
+            <script>
+                alert("Data berhasil dihapus!");
+            </script>
+            <?php
+        }
+    }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,7 +105,7 @@
         <a href="signup.html" style="text-decoration: none; color: white;">Login</a></div>
     <img class="IronMan3PhaseTwo20131"
         style="width: 240px; height: 359.82px; left: 1142px; top: 154px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
-        src="https://s3-alpha-sig.figma.com/img/b699/ff82/85fff851867ec97ade896cdc9771c70a?Expires=1701648000&Signature=BEhCnpSsZKwc9rTMpYQEgg9tTSoAAvUqSG2xUWI5V2NPDSsjyWaAf6ifKYM8F4pjH0w5xIJ~XNl93w~k-Zll6odSBJ8189K5pnkozaDXDwnVY~UdaIobW2UQYh-R89AdVxmA18rXmLUp08P2R9tK3qLNDY82FnbCfoXTC6YQZfqX4K1MMP8HcdtpvIBS1lbDLNtzsQ9oB8XpFuqgCIUf0K8gupnBoy0VNAyjegMybFIqPedLpEFEfVbcp1KBxbC6fvcayFs9oEXJpuTtzKx~bfbosN7pOGzsuxPxwxPVfBL56ePqUWArbP-r6tgFIKzEXRAdYakZqneRpkVCvWD-lQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+        src='<?php echo $row["poster"]; ?>' />
     <img class="Download131"
         style="width: 240px; height: 355.43px; left: 871px; top: 154px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
         src="https://s3-alpha-sig.figma.com/img/d7ac/2343/fbf68502260185cb8d9791377a3e419d?Expires=1701648000&Signature=fDZOyCfRpJKMpKf0dvP6h7jdcOcXRfe6nlxD4w4lgrE1bk~rMg7mdKcez-nk7hBdV80uxKkPDCePFjgkXCxTDURxTrtxuY99WNPnALOWyBRTmNpwDdK7YDQ4UxsKP8CGIwMQEffbcEJKsOqUu8rvbKybPfWdPPCDpe-TnafNVXcCso3pFi-QJF1iKFyFe9xuGBeeEJwiJekQN3UWj702rdJT8g6-7HSToKLPRor4cKrRQpvI~LMs5b7T8fUstWJ3UyRQo7auib00LQO5fH27y~v3YI4CEmYQakJnB3sN0MXsCwxCnJma6qRRKfGSERbJ9T9-APLEV99GDfPtoENdyg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
