@@ -2,7 +2,7 @@
 include "koneksi.php";
 if(isset($_GET['id'])){
     $id = $_GET['id'];
-    $poster = $_GET['poster'];
+    $poster = $_GET['id'];
     if($id !=""){
         $row = mysqli_fetch_array(mysqli_query($conn,"select * from film where id= '$id' "));
         $hapus = "delete from film where id= '$id' ";
@@ -103,7 +103,7 @@ if(isset($_GET['id'])){
     <div class="Login"
         style="width: 66px; height: 23px; left: 1121px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         <a href="signup.html" style="text-decoration: none; color: white;">Login</a></div>
-    <img class="IronMan3PhaseTwo20131"
+    <!-- <img class="IronMan3PhaseTwo20131"
         style="width: 240px; height: 359.82px; left: 1142px; top: 154px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
         src='<?php echo $row["poster"]; ?>' />
     <img class="Download131"
@@ -111,7 +111,7 @@ if(isset($_GET['id'])){
         src="https://s3-alpha-sig.figma.com/img/d7ac/2343/fbf68502260185cb8d9791377a3e419d?Expires=1701648000&Signature=fDZOyCfRpJKMpKf0dvP6h7jdcOcXRfe6nlxD4w4lgrE1bk~rMg7mdKcez-nk7hBdV80uxKkPDCePFjgkXCxTDURxTrtxuY99WNPnALOWyBRTmNpwDdK7YDQ4UxsKP8CGIwMQEffbcEJKsOqUu8rvbKybPfWdPPCDpe-TnafNVXcCso3pFi-QJF1iKFyFe9xuGBeeEJwiJekQN3UWj702rdJT8g6-7HSToKLPRor4cKrRQpvI~LMs5b7T8fUstWJ3UyRQo7auib00LQO5fH27y~v3YI4CEmYQakJnB3sN0MXsCwxCnJma6qRRKfGSERbJ9T9-APLEV99GDfPtoENdyg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     <img class="Download141"
         style="width: 240px; height: 355px; left: 58px; top: 585px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
-        src="https://s3-alpha-sig.figma.com/img/a584/5883/aa7b731df91f60dda8f2db30ec4b4276?Expires=1701648000&Signature=Bc5jTu5X~bBN1MBTq~vP73Ybap~6FmfRYCwB7Rv3ZKSfHHMeuEEhUgbKWvIgvdPAHP48REL6al78SUjDyHpdWmawzxzz03xH31T3TQ~OxfgH0FpBprWvgqqna05KsTOMT04ByqoowAwu3M0OqgOLWKdOSktNdgMSyuBcJ91aAccCNs5SlgHN3DRk4lUAtseaxgTnscrD65sXinDVoEv2QRBMvwaVG1I~GDIFYJBJcdQq64p~1DN5fdFZtZlGYHh~kSBkA8Fe3N2DfJwq8c1RkQyWIOSR-8iMPOIJ4H9WFWiyNcQEYlE0njLMuEU3PaZmk2E1zMeivs0YrdC3D0-Eow__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+        src="https://s3-alpha-sig.figma.com/img/a584/5883/aa7b731df91f60dda8f2db30ec4b4276?Expires=1701648000&Signature=Bc5jTu5X~bBN1MBTq~vP73Ybap~6FmfRYCwB7Rv3ZKSfHHMeuEEhUgbKWvIgvdPAHP48REL6al78SUjDyHpdWmawzxzz03xH31T3TQ~OxfgH0FpBprWvgqqna05KsTOMT04ByqoowAwu3M0OqgOLWKdOSktNdgMSyuBcJ91aAccCNs5SlgHN3DRk4lUAtseaxgTnscrD65sXinDVoEv2QRBMvwaVG1I~GDIFYJBJcdQq64p~1DN5fdFZtZlGYHh~kSBkA8Fe3N2DfJwq8c1RkQyWIOSR-8iMPOIJ4H9WFWiyNcQEYlE0njLMuEU3PaZmk2E1zMeivs0YrdC3D0-Eow__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /> -->
     <div class="IronMan2008"
         style="width: 158px; height: 32px; left: 58px; top: 535px; position: absolute; color: rgba(255, 255, 255, 0.60); font-size: 15px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         Iron Man (2008)</div>
@@ -154,18 +154,18 @@ if(isset($_GET['id'])){
     <div class="Film"
         style="width: 49px; height: 25px; left: 270px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         Film </div>
-    <img class="CaptainAmericaCivilWar20161500X22221"
+    <!-- <img class="CaptainAmericaCivilWar20161500X22221"
         style="width: 240px; height: 355.43px; left: 329px; top: 585px; position: absolute; border-radius: 10px"
         src="https://s3-alpha-sig.figma.com/img/f4e4/dcfd/8556f9087dfdc1e3ee0233758dd4146d?Expires=1701648000&Signature=gjELCb8yVTXGw5sjz57nRbzG6JRdl6JvnQ-ixeM9S6gvBzXt7HmpV~L5m5r5Vuft4eW86a~M87Sh-gnRsEJF-yvMrXAHpqZQoxILVWzK8ur-8Ve3tJSik1X-WG2DamxPa3NUBHjLYwFBLtpCNMJ7t1GamtQQHW7u-91cnelhGlcatO81mEg9tyIRuNEShHimtDhOxc-p-meueQIbZoZDL2I4YVOWe2SV7IO4792XYTagzqez7byvREggKurwQPgfJVnAT8uIiAid~ec7hE27tnE2lQt4zsEezLSQYBmTrJOTi1mq8qNoL~LoGvUjqfL9YY7rAF3JQsLiSLQ0kc4FqA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     <img class="Download161"
         style="width: 240px; height: 355.92px; left: 600px; top: 585px; position: absolute; border-radius: 10px"
-        src="https://s3-alpha-sig.figma.com/img/766b/8f09/bb698861bf930c64873bb22e5fe108f0?Expires=1701648000&Signature=gJO0DAxWT0~lb1kHfoVFqm7eePsoCeYKZwPY9kJAaMVpYTRDP84lYUmQ2UCaO0Tl-hr7wbYrSs7W8lpjL6KnCs62ktA9TECUsDwJcCE6x0AJoktMTtuPqNET-b~X8doqJDsohxHtsHOB0fKcRzBz0d3cs5C1rhhwTIMlHu9fFIriq10vDLAuMQUVQNyzGaDOCCAV32dIEyeR7SQwlvCSfisiurPg3CakT2v4lRMOFvKW~L7RzI2nGxxsQYB-nopDCiefnM4cD8wXonugvfupyd9cl4R4QbKaxvrQ757qrypk9DxuHZgNrNEECtOEj7DqwezlRjLmS93mFCRLx~LKGA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+        src="https://s3-alpha-sig.figma.com/img/766b/8f09/bb698861bf930c64873bb22e5fe108f0?Expires=1701648000&Signature=gJO0DAxWT0~lb1kHfoVFqm7eePsoCeYKZwPY9kJAaMVpYTRDP84lYUmQ2UCaO0Tl-hr7wbYrSs7W8lpjL6KnCs62ktA9TECUsDwJcCE6x0AJoktMTtuPqNET-b~X8doqJDsohxHtsHOB0fKcRzBz0d3cs5C1rhhwTIMlHu9fFIriq10vDLAuMQUVQNyzGaDOCCAV32dIEyeR7SQwlvCSfisiurPg3CakT2v4lRMOFvKW~L7RzI2nGxxsQYB-nopDCiefnM4cD8wXonugvfupyd9cl4R4QbKaxvrQ757qrypk9DxuHZgNrNEECtOEj7DqwezlRjLmS93mFCRLx~LKGA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /> -->
     <div class="Component12" style="width: 240px; height: 355.11px; left: 600px; top: 155px; position: absolute">
         <img class="IronMan2MoviePoster20101"
             style="width: 240px; height: 355.11px; left: 0px; top: 0px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
             src="https://via.placeholder.com/240x355" />
     </div>
-    <img class="Component2"
+    <!-- <img class="Component2"
         style="width: 240px; height: 356px; left: 329px; top: 154px; position: absolute; border-radius: 10px"
         src="https://via.placeholder.com/240x356" />
     <img class="Component1"
@@ -176,7 +176,7 @@ if(isset($_GET['id'])){
         src="https://s3-alpha-sig.figma.com/img/96ea/ec76/2f4ae6acc39e738d65aa4f243b29fc6d?Expires=1701648000&Signature=PHGyHFoXc~1Dtkh3N5D20vMbddQUQj4EHcLMPYTCAGlIoe9JsWyGN4lkjyCFJ1bKt6bYNVZ6UnFyK~RIknL6lq74DFZvvBAQXlP-Tbi6It7SP5aLb4cP1KBxsatWR6cp0EuN6JA5A2za58O1SzhrWhvZrEsToXyqJ3P5F1brxJo-5Bcs0ye5dbIdPiwZX7BXyKF-3wX97~XJEIgwd52sQyTFEFzEwFMakudqbQHfmQcG11pDgZviF2~yCif-WCtdohXBm3QLdr0Mk3NA14LGqX5mUfX67lAEf93PzuajfbFhqcmj9kGuy7U3iBaTkckccZeH9ijRzwqffPt0bWElEw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     <img class="AvengersEndGameNewPoster1"
         style="width: 240px; height: 355.43px; left: 1142px; top: 585px; position: absolute; border-radius: 10px"
-        src="https://s3-alpha-sig.figma.com/img/1a79/90bf/488092ce28c361569af69e386f85b75b?Expires=1701648000&Signature=ob4ouHc5Psb0PfAG4HnKB9pDofYpfUlbfP~s0gSeVXhkAhJOSB9ADTUlqN~9j9KalyxQqJQpDuF6Lzw6QwBKRhezf4FXfUzlbBLUqBdEzqfdA41b6MZL70eD5Yfo3pjkxabSp6y8n6Kehi5I-lqbtLeUhuATnOfGvTbmnV28~xVIPmKaXTcWGiFt6ZxKIgLXSPGFyE~5-i8K~uJqTG0PoBM5yyIDDWjn4SBM4DwWmJm9EenEdBoJ9~GDXgLyFFXKMWLqn-UMAt6uMVAtDKA5YUBRsXgI7Dc7Pgj2Sq-EAPeqeaOl1jO5NY2Obx6tULUYyZS0vlszq43ceucHgppSNQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
+        src="https://s3-alpha-sig.figma.com/img/1a79/90bf/488092ce28c361569af69e386f85b75b?Expires=1701648000&Signature=ob4ouHc5Psb0PfAG4HnKB9pDofYpfUlbfP~s0gSeVXhkAhJOSB9ADTUlqN~9j9KalyxQqJQpDuF6Lzw6QwBKRhezf4FXfUzlbBLUqBdEzqfdA41b6MZL70eD5Yfo3pjkxabSp6y8n6Kehi5I-lqbtLeUhuATnOfGvTbmnV28~xVIPmKaXTcWGiFt6ZxKIgLXSPGFyE~5-i8K~uJqTG0PoBM5yyIDDWjn4SBM4DwWmJm9EenEdBoJ9~GDXgLyFFXKMWLqn-UMAt6uMVAtDKA5YUBRsXgI7Dc7Pgj2Sq-EAPeqeaOl1jO5NY2Obx6tULUYyZS0vlszq43ceucHgppSNQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /> -->
 </div>
 </body>
 

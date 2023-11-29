@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Film Iron Man</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.svg">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/admin.css">
-    <link rel="stylesheet" href="../../css/admin_index.css">
-    <link rel="stylesheet" href="../../css/admin_header.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin_index.css">
+    <link rel="stylesheet" href="admin_header.css">
     <style>
         td img {
             max-width: 300px;
