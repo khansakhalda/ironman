@@ -32,24 +32,16 @@ if(isset($_GET['id'])){
             font-family: 'Inder', sans-serif;
             background: #000;
         }
-/* 
+
         .DaftarFilm {
             width: 100%;
             height: 100%;
             position: relative;
             background: #000;
-        } */
-        .DaftarFilm {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-            padding: 20px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .FilmContainer {
-            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px; /* Tambahkan gap untuk memberi ruang antar elemen grid */
         }
 
         .Login, .Deskripsi, .Pemeran, .Film {
@@ -60,41 +52,33 @@ if(isset($_GET['id'])){
             word-wrap: break-word;
         }
 
-        /* .FilmTitle {
+        .FilmTitle {
             font-size: 15px;
             font-family: Inder;
             font-weight: 400;
             word-wrap: break-word;
             color: rgba(255, 255, 255, 0.60);
-        } */
-        .FilmTitle {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            color: white;
-            text-align: center;
+            margin-top: 500px; /* Ubah margin untuk memberikan ruang antara judul dan poster */
         }
 
         .MoviePoster {
             width: 240px;
             height: 355px;
-            position: absolute;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
+            margin-top: -400px; /* Ubah margin untuk memberikan ruang antara poster dan judul berikutnya */
         }
-        /* .MoviePoster {
-            width: 240px;
-            height: 342px;
-            border-radius: 10px;
-        } */
 
         /* Add more movie-specific styles as needed */
 
         .IronMan2008 {
-            color: #FFFFFF99;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.60);
+            font-size: 15px;
+            font-family: Inder;
+            font-weight: 400;
         }
 
         .DeskripsiSection {
@@ -111,6 +95,7 @@ if(isset($_GET['id'])){
             font-family: Inder;
             font-weight: 400;
             word-wrap: break-word;
+            
         }
 
         .FilmSection {
@@ -119,6 +104,7 @@ if(isset($_GET['id'])){
             font-family: Inder;
             font-weight: 400;
             word-wrap: break-word;
+            
         }
     </style>
 
@@ -143,9 +129,11 @@ if(isset($_GET['id'])){
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "
-            <div class='FilmContainer'>
+            <div class='IronMan2008'>
+                <div class='FilmTitle'>
+                    " . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "
+                </div>
                 <img class='MoviePoster' src='" . (isset($row['foto_film']) ? $row['foto_film'] : 'https://via.placeholder.com/240x342') . "' />
-                <div class='FilmTitle'>" . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "</div>
             </div>";
         }
         ?>
@@ -182,13 +170,13 @@ if(isset($_GET['id'])){
         src="https://s3-alpha-sig.figma.com/img/3ed9/c625/e0ccef474f2796491910badf8272fbb3?Expires=1701648000&Signature=Pt1cOYQAi6JOXvVWD774V7jp9cNYwzEzQdN1aBLvE2DeYpNosZcirXNuQGWBSpNsxSmk4nuWZkmWnBCJwsH4bXVi-GoRrAbBcbvWxpctF~uOWcCnZ~DmNcdO2HifzXQACdBYLZrgxV2yOh0k-VxdOaiPUd65b7xM~GO6kw4fn57H6Ztiq-PDdOTJjQ8qNTpA-Wo5mrM3xmbtOQ~9TJsIaEb~w0pIquUXckrJx0YYLVpfe7eLBwn6NRIpmL~Tt2mJvm5y43fD03ZtbCstQzKar~1htddYbsHhRNilthqv-7a9uv7SRJPhFmS0d8l-MxrwGhl1Gkt~9J0Aq1EzQQTSRw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" /> -->
     <div class="Deskripsi"
         style="width: 88px; height: 25px; left: 463px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
-        Deskripsi</div>
+        <a href="deskripsi.php" style="text-decoration: none; color: white;">Deskripsi</a></div>
     <img class="B10393c07e4f8dd1ef419a36eed2e6071"
         style="width: 50px; height: 80.52px; left: 695px; top: 26px; position: absolute"
         src="https://s3-alpha-sig.figma.com/img/3ed9/c625/e0ccef474f2796491910badf8272fbb3?Expires=1701648000&Signature=Pt1cOYQAi6JOXvVWD774V7jp9cNYwzEzQdN1aBLvE2DeYpNosZcirXNuQGWBSpNsxSmk4nuWZkmWnBCJwsH4bXVi-GoRrAbBcbvWxpctF~uOWcCnZ~DmNcdO2HifzXQACdBYLZrgxV2yOh0k-VxdOaiPUd65b7xM~GO6kw4fn57H6Ztiq-PDdOTJjQ8qNTpA-Wo5mrM3xmbtOQ~9TJsIaEb~w0pIquUXckrJx0YYLVpfe7eLBwn6NRIpmL~Tt2mJvm5y43fD03ZtbCstQzKar~1htddYbsHhRNilthqv-7a9uv7SRJPhFmS0d8l-MxrwGhl1Gkt~9J0Aq1EzQQTSRw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     <div class="Pemeran"
         style="width: 88px; height: 25px; left: 889px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
-        Pemeran</div>
+        <a href="pemeran.php" style="text-decoration: none; color: white;">Pemeran</a></div>
     <div class="Film"
         style="width: 49px; height: 25px; left: 270px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         Film </div>
