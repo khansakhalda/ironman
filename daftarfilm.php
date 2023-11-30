@@ -129,12 +129,14 @@ if(isset($_GET['id'])){
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "
+            <a href='deskripsifilm.php?id=" . $row['id'] . "'>
             <div class='IronMan2008'>
                 <div class='FilmTitle'>
                     " . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "
                 </div>
                 <img class='MoviePoster' src='" . (isset($row['foto_film']) ? $row['foto_film'] : 'https://via.placeholder.com/240x342') . "' />
-            </div>";
+            </div>
+            </a>";
         }
         ?>
 
