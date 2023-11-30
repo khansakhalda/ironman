@@ -127,7 +127,7 @@ if(isset($_GET['id'])){
       <a id="play" href="https://youtu.be/-CKyYV5doCI?si=ZPjmkit07ks7JCrF"
         ><img src="../assets/images/playkuning.png" height="55px"
       /></a>
-      <div id="title">Iron Man (2008)</div>
+      <div id="title"> <?php echo $row['nama_film']; ?></div>
       <div id="description">
         <?php echo $row['deskripsi']; ?>
       </div>
