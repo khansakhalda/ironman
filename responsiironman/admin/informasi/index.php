@@ -3,8 +3,8 @@ include "koneksi.php";
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     if($id !=""){
-        $row = mysqli_fetch_array(mysqli_query($conn,"select * from daftar_film where id= '$id' "));
-        $hapus = "delete from daftar_film where id= '$id' ";
+        $row = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM daftar_film WHERE id= '$id' "));
+        $hapus = "DELETE FROM daftar_film WHERE id= '$id' ";
         $query = mysqli_query($conn, $hapus);
         if($query){
             ?>
@@ -47,22 +47,19 @@ if(isset($_GET['id'])){
             </tr>
             <?php
        $no = 1;
-       $sql = "select * from daftar_film order by id desc ";
+       $sql = "SELECT * FROM daftar_film order by id ASC ";
        $query = mysqli_query($conn,$sql);
        while($row = mysqli_fetch_array($query)){
         echo "
         <tr >
             <td>$no</td>
             <td>$row[nama_film]</td>
-            <td><img src='$row[foto_film]' width='115' height='150'></td>
+            <td><img src='../../../$row[foto_film]' width='115' height='150'></td>
             <td style='display: flex; gap: 5px; justify-content: center;'>
-                <a class='delete' href='detail.php?id=$row[deskripsiID]'>
-                    <img src='../../assets/images/detail.svg'>
-                </a>
-                <a class='update' href='update.php?id=$row[deskripsiID]'>
+                <a class='update' href='update.php?upd=$row[id]'>
                     <img src='../../assets/images/edit.svg'>
                 </a> 
-                <a class='delete' href='?id=$row[deskripsiID]'>
+                <a class='delete'  href='index.php?id=$row[id]'>
                     <img src='../../assets/images/delete.svg'>
                 </a>
             </td>

@@ -1,3 +1,27 @@
+<?php
+include "../../../koneksi.php";
+if(isset($_POST['input'])){
+    $id = $_POST['id'];
+    $nama_film = $_POST['nama_film'];
+    $foto_tmp = $_FILES['pemeran']['tmp_name'];
+    $foto = $_FILES['foto_film']['name'];
+    if($foto!=''){
+        $upload = 'images/'.$foto;
+        move_uploaded_file($foto_tmp, $upload);
+    }
+    $insert = "INSERT INTO daftar_film(nama_film,foto_film) 
+    values('$nama_film','$upload')";
+    $query = mysqli_query($conn,$insert);
+    if($query){
+        ?>
+        <script>
+            alert('Data berhasil ditambahkan!');
+            document.location='index.php';
+        </script>
+        <?php
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,29 +36,28 @@
 <body>
     <?php include '../../components/admin/sidenav.php' ?>
     <main>
-    <h1>Data Film Iron Man</h1>
-    <form name='formulir' method='POST' 
-action='<?php $_SERVER['PHP_SELF']; ?>'>
+    <h1>Data Film</h1>
+    <form action='<?php $_SERVER['PHP_SELF']; ?>' method='POST' enctype='multipart/form-data'>
     <table>
         <tr>
             <td>Nama Film</td>
             <td>:</td>
             <td>
-            <input type="text" name="nama">
+            <input type="text" name="nama_film">
             </td>
         </tr>
         <tr>
             <td>Foto Film</td>
             <td>:</td>
             <td>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
+            <input type="file" name="foto_film">
             </td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td>
-            <input type='submit' name='insert' value='Insert Data'>
+            <input type='submit' name='input' value='Insert Data'>
             </td>
         </tr>
     </table>
