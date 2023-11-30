@@ -54,7 +54,7 @@ if($hasil['id']!=""){
 <form name='formulir' method='post' action='<?php $_SERVER['PHP_SELF']; ?>' enctype="multipart/form-data">
 <table align='center' border='0'>
 <tr>
-        <td>Judul</td>
+        <td>Nama Film</td>
         <td>
             <input type="text" name="nama_film" value='<?php echo $hasil['nama_film']; ?>'>
         </td>

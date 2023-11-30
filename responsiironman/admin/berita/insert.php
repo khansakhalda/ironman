@@ -1,29 +1,30 @@
 <?php
-include "../../koneksi.php";
+include "../../../koneksi.php";
 if(isset($_POST['input'])){
     $id = $_POST['id'];
-    $judul = $_POST['judul'];
+    $nama_film = $_POST['nama_film'];
     $deskripsi = $_POST['deskripsi'];
-    $tgl_rilis = $_POST['tgl_rilis'];
+    $tanggal_rilis = $_POST['tanggal_rilis'];
     $sutradara = $_POST['sutradara'];
     $box_office = $_POST['box_office'];
     $serial_film = $_POST['serial_film'];
-    $gendre = $_POST['gendre'];
+    $genre = $_POST['genre'];
     $produser = $_POST['produser'];
-    $penulis = $_POST['penulis'];
-    $poster = $_FILES['poster']['name'];
-    if($poster!=''){
-        $upload = 'images/'.$poster;
-        move_uploaded_file($_FILES["poster"]["tmp_name"], $upload);
+    $cerita_oleh = $_POST['cerita_oleh'];
+    $pemeran_tmp = $_FILES['pemeran']['tmp_name'];
+    $pemeran = $_FILES['pemeran']['name'];
+    if($pemeran!=''){
+        $upload = 'images/'.$pemeran;
+        move_uploaded_file($pemeran_tmp, $upload);
     }
-    $insert = "insert into film(id,judul,deskripsi,tgl_rilis,sutradara,box_office,serial_film,gendre,produser,penulis,poster) 
-    values('$id','$judul','$deskripsi','$tgl_rilis','$sutradara','$box_office','$serial_film','$gendre','$produser','$penulis','$upload')";
+    $insert = "INSERT INTO deskripsi_film(id,nama_film,deskripsi,tanggal_rilis,sutradara,box_office,serial_film,genre,produser,cerita_oleh,pemeran) 
+    values('$id','$nama_film','$deskripsi','$tanggal_rilis','$sutradara','$box_office','$serial_film','$genre','$produser','$cerita_oleh','$upload')";
     $query = mysqli_query($conn,$insert);
     if($query){
         ?>
         <script>
             alert('Data berhasil ditambahkan!');
-            document.location='viewfilm.php';
+            document.location='index.php';
         </script>
         <?php
     }
@@ -44,27 +45,28 @@ if(isset($_POST['input'])){
     <?php include '../../components/admin/sidenav.php' ?>
     <main>
     <h1>Tambah Data Film Iron Man</h1>
-    <form name='formulir'>
+    <form action='<?php $_SERVER['PHP_SELF']; ?>' method='POST' enctype='multipart/form-data'>
+    <!-- <form name='formulir'> -->
     <table>
         <tr>
             <td>Nama Film</td>
             <td>:</td>
             <td>
-            <input type="text" name="judul">
+            <input type="text" name="nama_film">
             </td>
         </tr>
         <tr>
             <td>Deskripsi</td>
             <td>:</td>
             <td>
-            <input type="text" name="poster">
+                <textarea name="deskripsi" id="" cols="30" rows="10"></textarea>
             </td>
         </tr>
         <tr>
             <td>Tanggal Rilis</td>
             <td>:</td>
             <td>
-            <input type="date" name="tgl_rilis" value="2000-01-01">
+            <input type="date" name="tanggal_rilis" value="2000-01-01">
             </td>
         </tr>
         <tr>
@@ -92,7 +94,7 @@ if(isset($_POST['input'])){
             <td>Genre</td>
             <td>:</td>
             <td>
-            <input type="text" name="gendre">
+            <input type="text" name="genre">
             </td>
         </tr>
         <tr>
@@ -106,29 +108,29 @@ if(isset($_POST['input'])){
             <td>Cerita Oleh</td>
             <td>:</td>
             <td>
-            <input type="text" name="penulis">
+            <input type="text" name="cerita_oleh">
             </td>
         </tr>
         <tr>
             <td>Pemeran</td>
             <td>:</td>
             <td>
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <!-- <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg"> -->
             </td>
         </tr>
         <tr>
             <td></td>
             <td></td>
             <td>
-            <input type='submit' name='submit' class="insert" value='Submit'>
+            <input type='submit' name='inp  ut' class="insert" value='Submit'>
             </td>
         </tr>
     </table>

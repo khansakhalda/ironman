@@ -109,7 +109,7 @@ if(isset($_POST['input'])){
     <tr>
         <td></td>
         <td>
-            <input type="submit" name="input" value='Tambah Data film'/>  
+            <input type="submit" name="input" value='Tambah Data film'/>
         </td>
     </tr>
 </table>

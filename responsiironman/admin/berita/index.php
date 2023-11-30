@@ -1,10 +1,10 @@
 <?php
-include "koneksi.php";
+include "../../../koneksi.php";
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     if($id !=""){
-        $row = mysqli_fetch_array(mysqli_query($conn,"select * from film where id= '$id' "));
-        $hapus = "delete from film where id= '$id' ";
+        $row = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM deskripsi_film WHERE id= '$id' "));
+        $hapus = "DELETE FROM deskripsi_film WHERE id= '$id' ";
         $query = mysqli_query($conn, $hapus);
         if($query){
             ?>
@@ -48,39 +48,40 @@ if(isset($_GET['id'])){
             <tr>
                 <th>No</th>
                 <th>Nama Film</th>
+                <th>Deskripsi</th>
                 <th>Tanggal Rilis</th>
                 <th>Sutradara</th>
                 <th>Box Office</th>
                 <th>Serial Film</th>
                 <th>Genre</th>
                 <th>Prosedur</th>
-                <th>Cerita Oleh</th></th>
-                <th>Foto</th>
+                <th>Cerita Oleh</th>
+                <th>Pemeran</th>
                 <th>Aksi</th>
             </tr>
             <?php
        $no = 1;
-       $sql = "select * from film order by id desc ";
+       $sql = "select * from deskripsi_film order by id ASC ";
        $query = mysqli_query($conn,$sql);
        while($row = mysqli_fetch_array($query)){
         echo "
         <tr >
             <td>$no</td>
-            <td>$row[judul]</td>
-            <td><img src='$row[poster]' width='115' height='150'></td>
+            <td>$row[nama_film]</td>
             <td>$row[deskripsi]</td>
-            <td>$row[tgl_rilis]</td>
+            <td>$row[tanggal_rilis]</td>
             <td>$row[sutradara]</td>
             <td>$row[box_office]</td>
             <td>$row[serial_film]</td>
-            <td>$row[gendre]</td>
+            <td>$row[genre]</td>
             <td>$row[produser]</td>
-            <td>$row[penulis]</td>
+            <td>$row[cerita_oleh]</td>
+            <td><img src='../../../$row[pemeran]' width='115' height='150'></td>
             <td>
-            <a class='update' href=''>
+            <a class='update' href='update.php?upd=$row[id]'>
                 <img src='../../assets/images/edit.svg'>
             </a> 
-            <a class='delete' href=''>
+            <a class='delete' href='index.php?id=$row[id]'>
                 <img src='../../assets/images/delete.svg'>
             </a>
             </td>

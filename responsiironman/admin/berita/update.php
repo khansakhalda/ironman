@@ -1,52 +1,53 @@
 <?php
-include "koneksi.php";
+include "../../../koneksi.php";
 $upd = $_GET['upd'];
 
-$judul = $_POST['judul'];
+$nama_film = $_POST['nama_film'];
 $deskripsi = $_POST['deskripsi'];
-$tgl_rilis = $_POST['tgl_rilis'];
+$tanggal_rilis = $_POST['tanggal_rilis'];
 $sutradara = $_POST['sutradara'];
 $box_office = $_POST['box_office'];
 $serial_film = $_POST['serial_film'];
-$gendre = $_POST['gendre'];
+$genre = $_POST['genre'];
 $produser = $_POST['produser'];
-$penulis = $_POST['penulis'];
-$poster = $_FILES['poster']['name'];
+$cerita_oleh = $_POST['cerita_oleh'];
+$pemeran_tmp = $_FILES['pemeran']['tmp_name'];
+$pemeran = $_FILES['pemeran']['name'];
 $update = $_POST['update'];
 
-// Mendapatkan data poster saat ini dari database
-$sql_current_poster = "SELECT poster FROM film WHERE id='$upd'";
-$query_current_poster = mysqli_query($conn, $sql_current_poster);
-$hasil_current_poster = mysqli_fetch_array($query_current_poster);
-$current_poster = ($hasil_current_poster['poster'] !== null) ? $hasil_current_poster['poster'] : "images/";
+// Mendapatkan data pemeran saat ini dari database
+$sql_current_pemeran = "SELECT pemeran FROM deskripsi_film WHERE id='$upd'";
+$query_current_pemeran = mysqli_query($conn, $sql_current_pemeran);
+$hasil_current_pemeran = mysqli_fetch_array($query_current_pemeran);
+$current_pemeran = ($hasil_current_pemeran['pemeran'] !== null) ? $hasil_current_pemeran['pemeran'] : "images/";
 
 
-if ($poster != '') {
+if ($pemeran != '') {
     // Set nama file target sesuai format yang diinginkan
-    $target_file = 'images/' . basename($poster);
-    move_uploaded_file($_FILES["poster"]["tmp_name"], $target_file);
+    $target_file = 'images/' . basename($pemeran);
+    move_uploaded_file($pemeran_tmp, $target_file);
 } else {
-    // Jika poster tidak diubah, gunakan poster saat ini
-    $target_file = $current_poster;
+    // Jika pemeran tidak diubah, gunakan pemeran saat ini
+    $target_file = $current_pemeran;
 }
 
 
 
 if(isset($update)){
-	$update="update film set judul='$judul', deskripsi='$deskripsi', tgl_rilis='$tgl_rilis',
-    sutradara='$sutradara', box_office='$box_office', serial_film='$serial_film', gendre='$gendre',
-    produser='$produser', penulis='$penulis', poster='$target_file' where id='$upd'";
+	$update="UPDATE deskripsi_film SET nama_film='$nama_film', deskripsi='$deskripsi', tanggal_rilis='$tanggal_rilis',
+    sutradara='$sutradara', box_office='$box_office', serial_film='$serial_film', genre='$genre',
+    produser='$produser', cerita_oleh='$cerita_oleh', pemeran='$target_file' WHERE id='$upd'";
 	$query = mysqli_query($conn,$update);
 	if($query){
 		?>
 		<script>alert('Data Berhasil Diubah!'); 
-        document.location='viewfilm.php';
+        document.location='index.php';
         </script>
 		<?php
 	}
 }
 
-$sql = "select * from film where id='$upd' ";
+$sql = "SELECT * FROM deskripsi_film WHERE id='$upd' ";
 $query = mysqli_query($conn,$sql);
 $hasil = mysqli_fetch_array($query);
 if($hasil['id']!=""){
@@ -66,94 +67,83 @@ if($hasil['id']!=""){
     <?php include '../../components/admin/sidenav.php' ?>
     <main>
         <h1>Edit Data Film Iron Man</h1>
-            <form name='formulir'>
-                <input type="hidden" name="deskrisifilmID">
+        <form name='formulir' action='<?php $_SERVER['PHP_SELF']; ?>' method='POST' enctype='multipart/form-data'>
                 <table border='0'>
-                        <tr>
-            <td>Nama Film</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="nama">
-            </td>
-        </tr>
-        <tr>
-            <td>Deskripsi</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="deskripsi">
-            </td>
-        </tr>
-        <tr>
-            <td>Tanggal Rilis</td>
-            <td>:</td>
-            <td>
-            <input type="date" name="tanggal_rilis" value="2000-01-01">
-            </td>
-        </tr>
-        <tr>
-            <td>Sutradara</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="sutradara">
-            </td>
-        </tr>
-        <tr>
-            <td>Box Office</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="box">
-            </td>
-        </tr>
-        <tr>
-            <td>Serial Film</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="serial">
-            </td>
-        </tr>
-        <tr>
-            <td>Genre</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="genre">
-            </td>
-        </tr>
-        <tr>
-            <td>Produser</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="produser">
-            </td>
-        </tr>
-        <tr>
-            <td>Cerita Oleh</td>
-            <td>:</td>
-            <td>
-            <input type="text" name="ceritaoleh">
-            </td>
-        </tr>
-        <tr>
-            <td>Pemeran</td>
-            <td>:</td>
-            <td>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            <input type="file" name="avatar" accept="image/png, image/gif, image/jpeg" required>
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-            <input type='submit' name='submit' class="insert" value='Submit'>
-            </td>
-        </tr>
+                <tr>
+                        <td>Nama Film</td>
+                        <td>
+                            <input type="text" name="nama_film" value='<?php echo $hasil['nama_film']; ?>'>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Deskripsi</td>
+                        <td>
+                            <textarea name="deskripsi" ><?php echo $hasil['deskripsi']; ?></textarea>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Tanggal Rilis</td>
+                        <td>
+                            <input type="date" name="tanggal_rilis"   value='<?php echo $hasil['tanggal_rilis']; ?>'>
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Sutradara</td>
+                        <td>
+                            <input type="text" name="sutradara"  value='<?php echo $hasil['sutradara']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Box Office</td>
+                        <td>
+                            <input type="text" name="box_office"   value='<?php echo $hasil['box_office']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Serial Film</td>
+                        <td>
+                            <input type="text" name="serial_film"   value='<?php echo $hasil['serial_film']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Genre</td>
+                        <td>
+                            <input type="text" name="genre"    value='<?php echo $hasil['genre']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Produser</td>
+                        <td>
+                            <input type="text" name="produser"    value='<?php echo $hasil['produser']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Cerita Oleh</td>
+                        <td>
+                            <input type="text" name="cerita_oleh"    value='<?php echo $hasil['cerita_oleh']; ?>'>
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Pemeran</td>
+                        <td>
+                            <input type='file' name='pemeran' readonly>
+                            <span>Pememran saat ini: <?php echo $current_pemeran; ?></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                        <input type='submit' name='update' value='Update Data'>
+                        </td>
+                    </tr>
                 </table>
             </form>
     </main>
