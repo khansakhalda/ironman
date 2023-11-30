@@ -129,7 +129,7 @@ if(isset($_GET['id'])){
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "
-            <a href='deskripsifilm.php?id=" . $row['id'] . "'>
+            <a href='filmdeskripsi.php?id=" . $row['id'] . "'>
             <div class='IronMan2008'>
                 <div class='FilmTitle'>
                     " . (isset($row['nama_film']) ? $row['nama_film'] : 'Nama Film Tidak Tersedia') . "
