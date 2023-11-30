@@ -19,7 +19,12 @@ function authenticateUser($conn, $username, $password) {
         $user = mysqli_fetch_array($query);
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
-        header('Location: daftarfilm.php');
+
+        if ($user['role'] == 'admin') {
+            header('Location: responsiironman/admin/berita/index.php');
+        } else {
+            header('Location: daftarfilm.php');
+        }
         exit();
     } elseif ($username == '' || $password == '') {
         redirectToSignIn(2); // Error code 2: Username or password is empty
