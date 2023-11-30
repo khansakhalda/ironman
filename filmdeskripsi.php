@@ -1,3 +1,13 @@
+<?php
+include "koneksi.php";
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    if($id !=""){
+        $row = mysqli_fetch_array(mysqli_query($conn,"select * from deskripsi_film where id= '$id' "));
+    }
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -119,78 +129,72 @@
       /></a>
       <div id="title">Iron Man (2008)</div>
       <div id="description">
-        Pada adegan pembuka, Tony Stark digambarkan sedang berbincang dengan
-        beberapa tentara di dalam kendaraan militer, sebelum mereka diserang
-        oleh kelompok teroris. Stark terkena ledakan rudal yang ternyata
-        merupakan produk buatan perusahaannya sendiri. Setelah itu dia disandera
-        oleh kelompok tersebut. <br />
-        <br />Tony Stark yang mewarisi perusahaan kontraktor pertahanan Stark
-        Industries dari mendiang ayahnya, digambarkan sebagai seorang jenius
-        yang berhasil mengembangkan teknologi persenjataan militer. Namun, dia
-        juga digambarkan sebagai seseorang yang senang berjudi dan bermain-main
-        dengan perempuan. Demi urusan bisnis, dia pergi ke Afganistan yang luluh
-        lantak oleh perang bersama teman sekaligus penghubung militernya, Letnan
-        Kolonel James Rhodes untuk mendemonstrasikan peluru kendali "Jericho"
-        yang baru. Kemudian adegan dipercepat, dengan menampilkan penggalan
-        ketika rombongan Stark disergap, Stark terluka oleh rudal, dan tindakan
-        operasi yang dilakukan kepadanya. Setelah bangun ia mendapati dirinya
-        ditangkap dan ditawan dalam sebuah gua oleh kelompok teroris bernama Ten
-        Rings. Ho Yinsen, yang merupakan seorang dokter dan sesama tawanan,
-        menanamkan elektromagnet ke dalam dada Stark untuk mencegah pecahan
-        peluru yang melukainya agar tidak mencapai jantung dan membunuhnya.
-        Pemimpin Ten Rings, Raza, menawarkan untuk membebaskan Stark dengan
-        syarat dia membuatkan rudal Jericho untuk kelompok itu, tetapi Stark dan
-        Yinsen tahu bahwa dia tidak akan menepati janjinya.
+        <?php echo $row['deskripsi']; ?>
       </div>
       <div id="details">
         <div class="detail-table">
           <div class="detail-row">
             <div id="image-container">
-              <img
+              <!-- <img
                 id="iron-man-image"
                 src="../assets/images/poster.png"
                 alt="Iron Man"
-              />
+              /> -->
+              <img src='<?php echo $row['pemeran']; ?>' width='115' height='150'>
             </div>
             <div class="detail-item">Tanggal Rilis</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">April 2008</div>
+            <div class="detail-item">
+            <?php echo $row['tanggal_rilis']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Sutradara</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">Jon Favreau</div>
+            <div class="detail-item">
+            <?php echo $row['sutradara']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Box Office</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">$8 Juta USD</div>
+            <div class="detail-item">
+            <?php echo $row['box_office']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Serial Film</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">Iron Man</div>
+            <div class="detail-item">
+            <?php echo $row['serial_film']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Genre</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">Sci-Fi, Action, Adventure</div>
+            <div class="detail-item">
+            <?php echo $row['genre']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Produser</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">Kevin Feige, Avi Arad</div>
+            <div class="detail-item">
+            <?php echo $row['produser']; ?>
+            </div>
           </div>
           <div class="detail-row">
             <div></div>
             <div class="detail-item">Cerita Oleh</div>
             <div class="detail-item">:</div>
-            <div class="detail-item">(Nama Penulis)</div>
+            <div class="detail-item">
+            <?php echo $row['cerita_oleh']; ?>
+            </div>
           </div>
         </div>
       </div>
