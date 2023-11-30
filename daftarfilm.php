@@ -114,7 +114,7 @@ if(isset($_GET['id'])){
 <div class="DaftarFilm" style="width: 100%; height: 100%; position: relative; background: black">
     <div class="Login"
         style="width: 66px; height: 23px; left: 1121px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
-        <a href="signup.html" style="text-decoration: none; color: white;">Login</a></div>
+        <a href="signup.php" style="text-decoration: none; color: white;">Login</a></div>
     <!-- <img class="IronMan3PhaseTwo20131"
         style="width: 240px; height: 359.82px; left: 1142px; top: 154px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 10px"
         src='<?php echo $row["nama_film"]; ?>' />

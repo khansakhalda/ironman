@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+:root {
+    --black: #080C11;
+    --gray: rgba(0, 0, 0, 0.32);
+    --primary: #577B9D;
+    --secondary: #468662;
+    --blue-pastel: #BCCDFF;
+    --pink-pastel: #FFB5E2;
+    --yellow-pastel: #FFD5AF;
+    /* font weight */
+    --weight-extralight: 200;
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-extrabold: 800;
+    /* text size */
+    --size-xs: 0.75rem;
+    --size-sm: 0.9rem;
+    --size-base: 1rem;
+    --size-lg: 1.3rem;
+    --size-xl: 2rem;
+    --size-2xl: 3rem;
+    --size-3xl: 4rem;
+    --size-4xl: 5rem;
+    /* 1rem = 16px */
+}
+
+body {
+    font-family: Inder;
+    font-weight: var(--weight-regular);
+    font-size: var(--size-sm);
+    color: var(--black);
+}
