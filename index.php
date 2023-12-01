@@ -116,7 +116,7 @@ if(isset($_GET['id'])){
         style="width: 66px; height: 23px; left: 1121px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         <a href="signup.php" style="text-decoration: none; color: white;">Login</a></div>
         <?php
-        $sql = "SELECT * FROM daftar_film ORDER BY id DESC";
+        $sql = "SELECT * FROM daftar_film ORDER BY id ASC";
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "
