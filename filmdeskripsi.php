@@ -111,21 +111,21 @@ if(isset($_GET['id'])){
     <div id="container">
       <br />
       <a id="back-link" href="daftarfilm.php"
-        ><img src="../assets/images/deskripsileftcircle.png" height="55px"
+        ><img src="assets/images/deskripsileftcircle.png" height="55px"
       /></a>
       <img
         id="image"
-        src="../assets/images/ironmanvideo.png"
+        src="assets/images/ironmanvideo.png"
         alt="Iron Man 2008"
       />
       <a id="video" href=""
-        ><img src="../assets/images/trailer.png" height="55px"
+        ><img src="assets/images/trailer.png" height="55px"
       /></a>
       <a id="play" href="https://youtu.be/-CKyYV5doCI?si=ZPjmkit07ks7JCrF"
-        ><img src="../assets/images/play.png" height="55px"
+        ><img src="assets/images/play.png" height="55px"
       /></a>
       <a id="play" href="https://youtu.be/-CKyYV5doCI?si=ZPjmkit07ks7JCrF"
-        ><img src="../assets/images/playkuning.png" height="55px"
+        ><img src="assets/images/playkuning.png" height="55px"
       /></a>
       <div id="title"> <?php echo $row['nama_film']; ?></div>
       <div id="description">
