@@ -140,7 +140,7 @@ if(isset($_GET['id'])){
                 src="../assets/images/poster.png"
                 alt="Iron Man"
               /> -->
-              <img src='<?php echo $row['pemeran']; ?>' width='115' height='150'>
+              <img src='<?php echo $row['poster']; ?>' width='115' height='150'>
             </div>
             <div class="detail-item">Tanggal Rilis</div>
             <div class="detail-item">:</div>

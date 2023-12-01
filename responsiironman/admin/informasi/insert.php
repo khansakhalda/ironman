@@ -3,7 +3,7 @@ include "../../../koneksi.php";
 if(isset($_POST['input'])){
     $id = $_POST['id'];
     $nama_film = $_POST['nama_film'];
-    $foto_tmp = $_FILES['pemeran']['tmp_name'];
+    $foto_tmp = $_FILES['foto_film']['tmp_name'];
     $foto = $_FILES['foto_film']['name'];
     if($foto!=''){
         $upload = 'images/'.$foto;

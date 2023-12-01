@@ -128,7 +128,7 @@ if(isset($_GET['id'])){
         style="width: 49px; height: 25px; left: 270px; top: 54px; position: absolute; color: white; font-size: 20px; font-family: Inder; font-weight: 400; word-wrap: break-word">
         Film </div>
         <?php
-        $sql = "SELECT * FROM daftar_film ORDER BY id ASC";
+        $sql = "SELECT * FROM daftar_film ORDER BY id DESC";
         $query = mysqli_query($conn, $sql);
         while ($row = mysqli_fetch_array($query)) {
             echo "

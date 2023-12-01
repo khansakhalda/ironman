@@ -56,7 +56,7 @@ if(isset($_GET['id'])){
                 <th>Genre</th>
                 <th>Prosedur</th>
                 <th>Cerita Oleh</th>
-                <th>Pemeran</th>
+                <th>Poster</th>
                 <th>Aksi</th>
             </tr>
             <?php
@@ -76,7 +76,7 @@ if(isset($_GET['id'])){
             <td>$row[genre]</td>
             <td>$row[produser]</td>
             <td>$row[cerita_oleh]</td>
-            <td><img src='../../../$row[pemeran]' width='115' height='150'></td>
+            <td><img src='../../../$row[poster]' width='115' height='150'></td>
             <td>
             <a class='update' href='update.php?upd=$row[id]'>
                 <img src='../../assets/images/edit.svg'>

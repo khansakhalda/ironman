@@ -429,9 +429,7 @@
             word-wrap: break-word;
           "
         >
-          <button type="submit" class="btn btn-primary btn-block">
-            Log in
-          </button>
+        <input type="submit" name="input" value='Sign In'/>
         </div>
       </div>
     </form>
