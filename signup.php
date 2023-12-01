@@ -320,11 +320,6 @@ if(isset($_POST['input'])){
             <button onclick="redirectToSignIn()">OK</button>
         </div>
         
-        <!-- Failure Modal -->
-        <div id="failureModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 2px solid #333; border-radius: 10px; text-align: center;">
-            <p>Register Gagal!</p>
-            <button onclick="closeFailureModal()">OK</button>
-        </div>
     </div>
 </form>
         <script>
@@ -375,11 +370,6 @@ if(isset($_POST['input'])){
                         }, 3000); // 3000 milidetik (3 detik)
                     }
                 }
-
-            function closeFailureModal() {
-                var failureModal = document.getElementById('failureModal');
-                failureModal.style.display = 'none';
-            }
         </script>
 </body>
 </html>
