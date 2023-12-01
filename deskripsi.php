@@ -18,7 +18,7 @@
 <div class="IconlyLightArrowLeftCircle" style="width: 100%; height: 100%; position: relative">
     <div class="IconlyLightArrowLeftCircle" style="width: 44px; height: 44px; left: 80px; top: 0px; position: absolute">
         <div class="ArrowLeftCircle" style="width: 33.92px; height: 50px; left: 0px; top: 20px; position: absolute; transform-origin: 0 0">
-            <a href="daftarfilm.php"><img src="../assets/images/deskripsileftcircle.png" height="50px"></a>
+            <a href="daftarfilm.php"><img src="assets/images/deskripsileftcircle.png" height="50px"></a>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
             src="https://s3-alpha-sig.figma.com/img/61ca/426b/2a5069524b0f1b317efd312687b15a0d?Expires=1701648000&Signature=PSiPk1pgHSV7A3CuQtiMWYf1tFMr5rQq2LwRsciHGuECDlzNS4z1lNsjqU~a~PmnzJJMC2bdQiARLeUuTh1wClAYBs8rphz-cgw68te5JODT9SDPcK1kZlXyP25LcNorSBUgQXq68GCJ7PNgP-TY5mi8z07xslHVhdPANPxc~DC4JHyHCJ-QaqSLU7EApK3IpVWuUm5i~NsR3WF8Y2hABZK3gn2kq8FIhMpypk7ibgpdqIu9pclu7z43dEdGgltPBhNqIiSWiOvFzbuSYQw1nOY21n9bGpte1LhxGwZ5EJcXvuMtkA0aQpa-hX6FzBMmui09pX9WaFxkhBwzL7NYpA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
 
         <div class="Group1" style="width: 100px; height: 100px; left: 551px; top: 674px; position: absolute">
-            <a href="keterampilan.php"><img src="../assets/images/bulatan.png" height="100px"></a>
+            <a href="keterampilan.php"><img src="assets/images/bulatan.png" height="100px"></a>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -42,7 +42,7 @@
         </script>
 
         <div class="Group2" style="width: 100px; height: 100px; left: 764px; top: 303px; position: absolute">
-            <a href="bajubesi.php"><img src="../assets/images/bulatan.png" height="100px"></a>
+            <a href="bajubesi.php"><img src="assets/images/bulatan.png" height="100px"></a>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -55,7 +55,7 @@
         </script>
 
         <div class="Group1" style="width: 100px; height: 100px; left: 514px; top: 228px; position: absolute">
-            <a href="kekuatan.php"><img src="../assets/images/bulatan.png" height="100px"></a>
+            <a href="kekuatan.php"><img src="assets/images/bulatan.png" height="100px"></a>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {

@@ -187,7 +187,7 @@
 
 <body>
 <div class="DeskripsiIronMan" style="width: 100%; height: 100%; position: relative; background: black">
-<a href="deskripsi.php"><img src="../assets/images/deskripsileftcircle.png" height="55px"></a>
+<a href="deskripsi.php"><img src="assets/images/deskripsileftcircle.png" height="55px"></a>
     <img class="UntitledDesign11" style="width: 1100px; height: 1000px; left: 626px; top: -233px; position: absolute"
         src="https://s3-alpha-sig.figma.com/img/61ca/426b/2a5069524b0f1b317efd312687b15a0d?Expires=1702252800&Signature=pgQrrbMubI05sTNM4NKEgF2o~hIebYl6geFZq5BED6W27WRy9rTlhMeuee88Bu3mVFvpn4nNXp3dNek46GP5qzTFx8vMxhthGXg3VpS5jl1IRGkzYgKY-iCi5GJRW1wAtPCQSBIABO1L5ZjiAvZ-hkfD8XPsrP9XalX-DigrzV7cr5tjieGE~NWclV4FJhNEDurA8ak93kDk8Ac3BGLcdW36L1C-6O82HtgFBcEks4qh37rqMrfpRd5KX80kSaF3AA3WWq~oqpoZq6N6pk6I-wFH4oPqZmuhtF6xo2W38Honf-vsfdwp9cz1ugPTy8JUWMs9Am3Gn2NwTDrv9WP8Jw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
     <div class="Group1" style="width: 250px; height: 500px; left: 865px; top: 250px; position: absolute">

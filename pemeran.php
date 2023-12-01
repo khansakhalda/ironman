@@ -151,12 +151,12 @@ body {
         <div class="slider-wrapper">
             <button  id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
             <div class="image-list">
-                <img src="" alt="" class="image-item">
-                <img src="" alt="" class="image-item">
-                <img src="" alt="" class="image-item">
-                <img src="" alt="" class="image-item">
-                <img src="" alt="" class="image-item">
-                <img src="" alt="" class="image-item">
+                <img src="assets/images/pemeran1.png" alt="" class="image-item">
+                <img src="assets/images/pemeran2.png" alt="" class="image-item">
+                <img src="assets/images/pemeran3.png" alt="" class="image-item">
+                <img src="assets/images/pemeran4.png" alt="" class="image-item">
+                <img src="assets/images/pemeran5.png" alt="" class="image-item">
+                <img src="assets/images/pemeran6.png" alt="" class="image-item">
             </div>
             <button  id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
         </div>
