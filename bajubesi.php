@@ -170,7 +170,7 @@
 
 <body>
 <div class="DeskripsiIronMan" style="width: 100%; height: 100%; position: relative; background: black">
- <a href="deskripsi.php"><img src="../assets/images/deskripsileftcircle.png" height="55px"></a>
+ <a href="deskripsi.php"><img src="assets/images/deskripsileftcircle.png" height="55px"></a>
     <img class="UntitledDesign11"
         style="width: 900px; height: 1600px; left: -152px; top: 24px; position: absolute; opacity: 0.80"
         src="https://s3-alpha-sig.figma.com/img/61ca/426b/2a5069524b0f1b317efd312687b15a0d?Expires=1701648000&Signature=PSiPk1pgHSV7A3CuQtiMWYf1tFMr5rQq2LwRsciHGuECDlzNS4z1lNsjqU~a~PmnzJJMC2bdQiARLeUuTh1wClAYBs8rphz-cgw68te5JODT9SDPcK1kZlXyP25LcNorSBUgQXq68GCJ7PNgP-TY5mi8z07xslHVhdPANPxc~DC4JHyHCJ-QaqSLU7EApK3IpVWuUm5i~NsR3WF8Y2hABZK3gn2kq8FIhMpypk7ibgpdqIu9pclu7z43dEdGgltPBhNqIiSWiOvFzbuSYQw1nOY21n9bGpte1LhxGwZ5EJcXvuMtkA0aQpa-hX6FzBMmui09pX9WaFxkhBwzL7NYpA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" />
