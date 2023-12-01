@@ -234,7 +234,7 @@
               top: 0px;
               position: absolute;
             "
-            src="https://s3-alpha-sig.figma.com/img/ae3f/487d/f883e129a3ebc0977d6ba5f6af05fd05?Expires=1701043200&Signature=CUiNWIFylxvIs4VemRhXE7-WYmPX1hCmYBsvjF7R4WLIFCoZkqdGYqmS3bh1hEJki3oz5egxbSx1yru-aVDKKAH0vS~t98FTYHz6-1cmf4-KPnV6PlGySnAL~ao1SRfH~19~OQ6SHZnEXoSNYPTp0HpwH-n6W8e02-XXfYJMvmTDXxTuCexV4E32uKIIykH2SgOM2Y2CsDt91psg2hLRdGyuXTDH1-4kFks2rSve3Xk2RJRs9lhGPXuhv1Q2gIFQ01kot~is0vIfkpGtm7EDddGuJOgbcR5InhNbvHRdUuJiGYxKuEc1o2~12rgcTkiMmXR-McZm8Klxv2cQ-gcsPQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            src="assets/images/bgsign.png"
           />
         </div>
         <div
