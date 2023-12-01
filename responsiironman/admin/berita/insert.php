@@ -11,13 +11,13 @@ if(isset($_POST['input'])){
     $genre = $_POST['genre'];
     $produser = $_POST['produser'];
     $cerita_oleh = $_POST['cerita_oleh'];
-    $pemeran_tmp = $_FILES['pemeran']['tmp_name'];
-    $pemeran = $_FILES['pemeran']['name'];
-    if($pemeran!=''){
-        $upload = 'images/'.$pemeran;
-        move_uploaded_file($pemeran_tmp, $upload);
+    $poster_tmp = $_FILES['poster']['tmp_name'];
+    $poster = $_FILES['poster']['name'];
+    if($poster!=''){
+        $upload = 'images/'.$poster;
+        move_uploaded_file($poster_tmp, $upload);
     }
-    $insert = "INSERT INTO deskripsi_film(id,nama_film,deskripsi,tanggal_rilis,sutradara,box_office,serial_film,genre,produser,cerita_oleh,pemeran) 
+    $insert = "INSERT INTO deskripsi_film(id,nama_film,deskripsi,tanggal_rilis,sutradara,box_office,serial_film,genre,produser,cerita_oleh,poster) 
     values('$id','$nama_film','$deskripsi','$tanggal_rilis','$sutradara','$box_office','$serial_film','$genre','$produser','$cerita_oleh','$upload')";
     $query = mysqli_query($conn,$insert);
     if($query){
@@ -112,18 +112,18 @@ if(isset($_POST['input'])){
             </td>
         </tr>
         <tr>
-            <td>Pemeran</td>
+            <td>poster</td>
             <td>:</td>
             <td>
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <!-- <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg">
-            <input type="file" name="pemeran" accept="image/png, image/gif, image/jpeg"> -->
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <!-- <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg">
+            <input type="file" name="poster" accept="image/png, image/gif, image/jpeg"> -->
             </td>
         </tr>
         <tr>

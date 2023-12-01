@@ -11,24 +11,24 @@ $serial_film = $_POST['serial_film'];
 $genre = $_POST['genre'];
 $produser = $_POST['produser'];
 $cerita_oleh = $_POST['cerita_oleh'];
-$pemeran_tmp = $_FILES['pemeran']['tmp_name'];
-$pemeran = $_FILES['pemeran']['name'];
+$poster_tmp = $_FILES['poster']['tmp_name'];
+$poster = $_FILES['poster']['name'];
 $update = $_POST['update'];
 
-// Mendapatkan data pemeran saat ini dari database
-$sql_current_pemeran = "SELECT pemeran FROM deskripsi_film WHERE id='$upd'";
-$query_current_pemeran = mysqli_query($conn, $sql_current_pemeran);
-$hasil_current_pemeran = mysqli_fetch_array($query_current_pemeran);
-$current_pemeran = ($hasil_current_pemeran['pemeran'] !== null) ? $hasil_current_pemeran['pemeran'] : "images/";
+// Mendapatkan data poster saat ini dari database
+$sql_current_poster = "SELECT poster FROM deskripsi_film WHERE id='$upd'";
+$query_current_poster = mysqli_query($conn, $sql_current_poster);
+$hasil_current_poster = mysqli_fetch_array($query_current_poster);
+$current_poster = ($hasil_current_poster['poster'] !== null) ? $hasil_current_poster['poster'] : "images/";
 
 
-if ($pemeran != '') {
+if ($poster != '') {
     // Set nama file target sesuai format yang diinginkan
-    $target_file = 'images/' . basename($pemeran);
-    move_uploaded_file($pemeran_tmp, $target_file);
+    $target_file = 'images/' . basename($poster);
+    move_uploaded_file($poster_tmp, $target_file);
 } else {
-    // Jika pemeran tidak diubah, gunakan pemeran saat ini
-    $target_file = $current_pemeran;
+    // Jika poster tidak diubah, gunakan poster saat ini
+    $target_file = $current_poster;
 }
 
 
@@ -36,7 +36,7 @@ if ($pemeran != '') {
 if(isset($update)){
 	$update="UPDATE deskripsi_film SET nama_film='$nama_film', deskripsi='$deskripsi', tanggal_rilis='$tanggal_rilis',
     sutradara='$sutradara', box_office='$box_office', serial_film='$serial_film', genre='$genre',
-    produser='$produser', cerita_oleh='$cerita_oleh', pemeran='$target_file' WHERE id='$upd'";
+    produser='$produser', cerita_oleh='$cerita_oleh', poster='$target_file' WHERE id='$upd'";
 	$query = mysqli_query($conn,$update);
 	if($query){
 		?>
@@ -132,10 +132,10 @@ if($hasil['id']!=""){
                     
                     </tr>
                     <tr>
-                        <td>Pemeran</td>
+                        <td>poster</td>
                         <td>
-                            <input type='file' name='pemeran' readonly>
-                            <span>Pememran saat ini: <?php echo $current_pemeran; ?></span>
+                            <input type='file' name='poster' readonly>
+                            <span>Pememran saat ini: <?php echo $current_poster; ?></span>
                         </td>
                     </tr>
                     <tr>
