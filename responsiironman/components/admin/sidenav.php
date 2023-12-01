@@ -11,7 +11,7 @@
                 <img src="../../assets/images/berita.svg" width="20">
                 Daftar Film
             </a>
-            <a name="logout" style="margin-top: 9rem;" href="../../logout.php">
+            <a name="logout" style="margin-top: 9rem;" href="../../../logout.php">
                 <img src="../../assets/images/keluar.svg" width="20">
                 Keluar
             </a>
